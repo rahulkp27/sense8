@@ -1,0 +1,253 @@
+@-webkit-keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  width: 100vw;
+  height: 100vh;
+}
+
+.logo {
+  -webkit-filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+}
+
+.white-navbar {
+  background-color: white;
+}
+
+.transparent-navbar {
+  background: transparent;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+  z-index: 999;
+}
+
+.hero-area .overlay {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.hero-area .overlay #bg-video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.hero-area .overlay .typing {
+  position: relative;
+}
+
+.hero-area .overlay .typing::after {
+  content: "";
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  width: 0.25rem;
+  background-color: white;
+  border-radius: 2px;
+  margin-left: auto;
+  -webkit-animation: blink 500ms linear infinite;
+          animation: blink 500ms linear infinite;
+}
+
+.separator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.separator span {
+  margin: 0 auto;
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  width: 175px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.2);
+  z-index: 11;
+}
+
+.separator span::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  border-right: 2px dashed rgba(0, 0, 0, 0.2);
+  bottom: 0;
+  z-index: 11;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.typed-cursor {
+  display: none;
+}
+
+.moto, .contacts {
+  background: url("../images/gaming-bg.jpeg") no-repeat center/cover;
+  background-attachment: scroll;
+  z-index: 2;
+}
+
+.moto .dimmer-overlay, .contacts .dimmer-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+
+.moto .separator span, .contacts .separator span {
+  border-bottom: 2px dashed gray;
+}
+
+.moto .separator span::before, .contacts .separator span::before {
+  border-right: 2px dashed gray;
+}
+
+.moto .overlay, .contacts .overlay {
+  z-index: 11;
+}
+
+.moto .overlay .head, .moto .overlay .sub-head, .contacts .overlay .head, .contacts .overlay .sub-head {
+  text-shadow: 1px 1px 14px black;
+}
+
+.clients .content .client-overlay {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.clients .content .client-overlay:hover {
+  background: transparent;
+}
+
+.events .content .events-list .event-item {
+  z-index: 0;
+}
+
+.events .content .events-list .event-item:hover {
+  cursor: pointer;
+}
+
+.events .content .events-list .event-item .event-overlay {
+  z-index: 10;
+  background: transparent;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+.events .content .events-list .event-item .event-overlay:hover {
+  background: rgba(174, 0, 255, 0.5);
+  opacity: 1;
+}
+
+.creators .content .creator-overlay {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.creators .content .creator-overlay .creator-info {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.creators .content .creator-overlay:hover {
+  background: transparent;
+}
+
+.bootcamp .image-list .image-item {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.triangle {
+  background: -webkit-gradient(linear, left top, right bottom, from(#fff0), color-stop(50%, #fff0), color-stop(50%, #ae00ff), to(#ae00ff));
+  background: linear-gradient(to bottom right, #fff0 0%, #fff0 50%, #ae00ff 50%, #ae00ff 100%);
+  z-index: 3;
+}
+
+.swiper {
+  height: 500px;
+  width: 80vw;
+}
+
+.swiper-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.swiper-slide {
+  width: 200px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  z-index: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+.swiper-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.swiper-slide:not(.swiper-slide-active) .swiper-overlay {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.swiper-slide-active {
+  z-index: 99;
+}
+
+.swiper-slide-active .member-info {
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+  opacity: 1;
+}
+
+.swiper-slide-active img {
+  -webkit-box-shadow: 1px 1px 30px 8px gray;
+          box-shadow: 1px 1px 30px 8px gray;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=app.css.map */
